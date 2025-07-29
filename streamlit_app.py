@@ -34,7 +34,7 @@ with st.form("crop_form", clear_on_submit=False):
         }
 
         try:
-            response = requests.post("http://localhost:8099/predict", json=input_payload)
+            response = requests.post("http://localhost:8000/predict", json=input_payload)
             if response.status_code == 200:
                 result = response.json()
                 st.success(f"Prediction: {result}")
